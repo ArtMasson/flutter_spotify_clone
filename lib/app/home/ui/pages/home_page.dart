@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_spotify_clone/config/ui/theme/fonts.dart';
 import 'package:flutter_spotify_clone/config/ui/theme/ui/stores/theme_store.dart';
 import 'package:flutter_spotify_clone/core/common/injected/module.dart';
-import 'package:flutter_gen/gen_l10n/intl_localizations.dart';
 import 'package:flutter_spotify_clone/core/common/utils/screen_utils.dart';
 
 class HomePage extends StatefulWidget {
@@ -23,54 +20,50 @@ class _HomePageState extends State<HomePage> {
             ? Icon(Icons.brightness_high)
             : Icon(Icons.brightness_2),
       ),
-      body: _buildBody(context),
+      body: Container(
+        decoration: new BoxDecoration(
+            gradient: RadialGradient(
+          center: Alignment(-1, -1.7),
+          colors: [
+            const Color(0xFF3A9DBC),
+            const Color(0xFF121212),
+          ],
+          radius: 1.5,
+        )),
+        child: _buildBody(context),
+      ),
     );
   }
 
   Widget _buildBody(BuildContext context) {
-    return AnnotatedRegion<SystemUiOverlayStyle>(
-      //TODO: Change system appBar color on repository, not in here
-      value: themeStore.isDark
-          ? SystemUiOverlayStyle.light
-          : SystemUiOverlayStyle.dark,
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Container(
+            height: 5.h,
+            decoration: new BoxDecoration(
+              gradient: new LinearGradient(
+                colors: [
+                  const Color(0xFF323232).withOpacity(0.8),
+                  const Color(0xFF2A2A2A).withOpacity(0.8),
+                  const Color(0xFF272727).withOpacity(0.8),
+                ],
+                begin: Alignment.bottomLeft,
+                end: Alignment.topRight,
+              ),
+            ),
+            child: Row(
               children: [
-                Text(
-                  "Good Evening",
-                  style: AppFonts.getTextStyle(
-                    fontColor: Theme.of(context).colorScheme.onBackground,
-                  ),
+                Image.network(
+                  "https://cdn.crello.com/common/b96ff32d-99d2-4a84-a88c-f653cd1d3559_450.jpg",
                 ),
-                Container(
-                  height: 50.h,
-                  child: GridView.count(
-                    crossAxisCount: 2,
-                    mainAxisSpacing: 5.h,
-                    crossAxisSpacing: 5.w,
-                    children: [
-                      Card(
-                        child: Row(
-                          children: [
-                            Text("Oi"),
-                          ],
-                        ),
-                      ),
-                      Card(
-                        child: Text("Oi"),
-                      )
-                    ],
-                  ),
-                ),
+                Text("Oi"),
               ],
-            )
-          ],
-        ),
+            ),
+          ),
+        ],
       ),
     );
   }

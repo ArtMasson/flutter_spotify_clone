@@ -21,14 +21,14 @@ ThemeData get lightTheme => ThemeData(
     );
 
 ThemeData get darkTheme => ThemeData(
-      scaffoldBackgroundColor: Colors.red,
+      scaffoldBackgroundColor: Colors.black,
       visualDensity: VisualDensity.adaptivePlatformDensity,
       colorScheme: ColorScheme(
         primary: Colors.red,
         onPrimary: Colors.black,
         primaryVariant: Colors.orange,
-        background: Colors.red,
-        onBackground: Colors.black,
+        background: Colors.black,
+        onBackground: Colors.white,
         secondary: Colors.teal,
         onSecondary: Colors.white,
         secondaryVariant: Colors.deepOrange,
