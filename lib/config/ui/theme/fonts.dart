@@ -21,7 +21,7 @@ class AppFonts {
   static TextStyle getTextStyle({
     double fontSize = textSize,
     FontWeight fontWeight = normal,
-    Color fontColor = Colors.black,
+    required Color fontColor,
     double colorOpacity = 1,
     TextDecoration? decoration,
   }) =>

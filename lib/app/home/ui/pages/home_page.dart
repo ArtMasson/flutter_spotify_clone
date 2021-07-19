@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_spotify_clone/config/ui/theme/fonts.dart';
 import 'package:flutter_spotify_clone/config/ui/theme/ui/stores/theme_store.dart';
 import 'package:flutter_spotify_clone/core/common/injected/module.dart';
 import 'package:flutter_gen/gen_l10n/intl_localizations.dart';
@@ -37,21 +38,37 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Text(
-              AppLocalizations.of(context)!.homeWelcome,
-              style: TextStyle(
-                fontSize: 26,
-              ),
-            ),
-            SizedBox(
-              height: 10.h,
-            ),
-            Text(
-              AppLocalizations.of(context)!.homeDesc,
-              style: TextStyle(
-                fontSize: 16,
-              ),
-            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Good Evening",
+                  style: AppFonts.getTextStyle(
+                    fontColor: Theme.of(context).colorScheme.onBackground,
+                  ),
+                ),
+                Container(
+                  height: 50.h,
+                  child: GridView.count(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 5.h,
+                    crossAxisSpacing: 5.w,
+                    children: [
+                      Card(
+                        child: Row(
+                          children: [
+                            Text("Oi"),
+                          ],
+                        ),
+                      ),
+                      Card(
+                        child: Text("Oi"),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),

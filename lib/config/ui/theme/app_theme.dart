@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 ThemeData get lightTheme => ThemeData(
-      scaffoldBackgroundColor: Colors.white,
+      scaffoldBackgroundColor: Colors.blueAccent,
       visualDensity: VisualDensity.adaptivePlatformDensity,
       colorScheme: ColorScheme(
         primary: Colors.amber,
@@ -21,6 +21,7 @@ ThemeData get lightTheme => ThemeData(
     );
 
 ThemeData get darkTheme => ThemeData(
+      scaffoldBackgroundColor: Colors.red,
       visualDensity: VisualDensity.adaptivePlatformDensity,
       colorScheme: ColorScheme(
         primary: Colors.red,
