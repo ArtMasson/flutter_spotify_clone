@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_spotify_clone/config/ui/theme/fonts.dart';
 import 'package:flutter_spotify_clone/config/ui/theme/ui/stores/theme_store.dart';
 import 'package:flutter_spotify_clone/core/common/injected/module.dart';
 import 'package:flutter_spotify_clone/core/common/utils/screen_utils.dart';
@@ -42,8 +43,10 @@ class _HomePageState extends State<HomePage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Container(
-            height: 5.h,
+            height: 8.h,
+            width: 50.w,
             decoration: new BoxDecoration(
+              borderRadius: BorderRadius.circular(5),
               gradient: new LinearGradient(
                 colors: [
                   const Color(0xFF323232).withOpacity(0.8),
@@ -59,7 +62,16 @@ class _HomePageState extends State<HomePage> {
                 Image.network(
                   "https://cdn.crello.com/common/b96ff32d-99d2-4a84-a88c-f653cd1d3559_450.jpg",
                 ),
-                Text("Oi"),
+                SizedBox(
+                  width: 2.w,
+                ),
+                Text(
+                  "Lorem",
+                  style: AppFonts.getTextStyle(
+                    fontColor: Colors.white,
+                    fontSize: AppFonts.textBigSize,
+                  ),
+                ),
               ],
             ),
           ),
