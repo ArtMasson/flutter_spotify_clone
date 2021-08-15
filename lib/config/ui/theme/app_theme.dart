@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 ThemeData get lightTheme => ThemeData(
-      scaffoldBackgroundColor: Colors.blueAccent,
+      scaffoldBackgroundColor: Colors.white,
       visualDensity: VisualDensity.adaptivePlatformDensity,
       colorScheme: ColorScheme(
-        primary: Colors.amber,
+        primary: Colors.green,
         onPrimary: Colors.white,
         primaryVariant: Colors.orange,
         background: Colors.blueAccent,

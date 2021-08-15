@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_spotify_clone/app/home/ui/pages/home_page.dart';
+import 'package:flutter_spotify_clone/app/home/ui/home_page.dart';
 import 'package:flutter_spotify_clone/config/ui/theme/ui/stores/theme_store.dart';
 import 'package:flutter_spotify_clone/core/common/injected/module.dart';
 import 'package:flutter_spotify_clone/core/common/utils/screen_utils.dart';
